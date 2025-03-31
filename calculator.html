@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calculator{
+            background-color: black;
+            max-width: 15.6pc;
+        }
+        .display input{
+            border: none;
+            background-color: black;
+        }
+        #display_box{
+            font-size: 20px;
+            padding-top: 20vh;
+            padding-bottom: 10px;
+            color: white;
+        }
+        #scd_display{
+            padding-left: 4.9pc;
+            color: grey;
+        }
+        .firstline button{
+            cursor: pointer;
+            font-size: 1.5pc;
+            padding-right: 2.01pc;
+            color: rgb(245, 70, 1);
+            background: none;
+            border: black;
+        }
+        .firstline button:hover{
+            color: orange;
+        }
+        .middleones button{
+            padding-top: 20px;
+            cursor: pointer;
+            font-size: 1.5pc;
+            padding-right: 2.49pc;
+            color: white;
+            border: black;
+            background: none;
+        }
+        .middleones button:hover{
+            color: grey;
+        }
+        .lastone{
+            cursor: pointer;
+            cursor: pointer;
+            font-size: 1.5pc;
+            color: rgb(245, 70, 1);
+            background: none;
+            border: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <input type="number" id="display_box" dir="rtl" placeholder="0">
+            <input type="number" id="scd_display" dir="rtl" placeholder="" readonly>
+        </div>
+        <div class="options">
+            <div class="firstline">
+                <button id="c" onclick="clr()">c</button>
+                <button id="del">Del</button>
+                <button id="%">%</button>
+            </div>
+            <button id="/" class="lastone">&divide;</button><br>
+            <div class="middleones">
+                <button id="7" onclick="pasval(7)">7</button>
+                <button id="8" onclick="pasval(8)">8</button>
+                <button id="9" onclick="pasval(9)">9</button>
+                <button id="x">x</button><br>
+                <button id="4" onclick="pasval(4)">4</button>
+                <button id="5" onclick="pasval(5)">5</button>
+                <button id="6" onclick="pasval(6)">6</button>
+                <button id="-">-</button><br>
+                <button id="1" onclick="pasval(1)">1</button>
+                <button id="2" onclick="pasval(2)">2</button>
+                <button id="3" onclick="pasval(3)">3</button>
+                <button id="+" onclick="add()">+</button><br>
+            </div>
+            <button id="0" onclick="pasval(0)">0</button>
+            <button id=".">.</button>
+            <button id="=">=</button>
+        </div>
+    </div>
+    <script>
+        function pasval(num){
+            document.getElementById('display_box').value += num;
+            document.getElementById('scd_display').value += num;
+        }
+        function clr(){
+            document.getElementById('display_box').value = "";
+            document.getElementById('scd_display').value = "";
+        }
+        function add(){
+            num1 = parseFloat(document.getElementById('display_box').value)
+            document.getElementById('display_box').value = ""
+        }
+    </script>
+</body>
+</html>
